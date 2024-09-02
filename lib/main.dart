@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_app/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,18 +10,5 @@ void main() {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(home: HomeScreen(),);
-  }
-}
- class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.deepPurpleAccent,
-      body: Column(
-        children: [ Image(image:AssetImage('asset/Illustration.png') ,height: 50 , width: 50,)],
-      ),
- );
   }
 }
