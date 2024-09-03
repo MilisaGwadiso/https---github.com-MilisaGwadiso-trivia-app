@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_app/routes/routes.dart';
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({ required this.height,
   required this.width,
@@ -29,7 +30,9 @@ final String text;
     child:
    CircleAvatar( backgroundColor: Colors.deepOrangeAccent, radius: 40,
     child: IconButton(color: Colors.white,
-      icon: const Icon(Icons.play_arrow_outlined),onPressed: () {}, iconSize:60,)))]
+      icon: const Icon(Icons.play_arrow_outlined),onPressed: () {
+        Navigator.of(context).pushNamed(Routes.quizScreen1);
+      }, iconSize:60,)))]
    ));
    }
 }
