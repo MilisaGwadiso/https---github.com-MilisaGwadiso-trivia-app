@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/Widgets/Questions/quizscreen.dart';
+import 'package:trivia_app/Widgets/Questions/quizscreen1.dart';
 import 'package:trivia_app/home_screen.dart';
 
 class Routes {
