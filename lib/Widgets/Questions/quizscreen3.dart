@@ -14,7 +14,7 @@ class _QuizscreenState extends State<Quizscreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: const Color(0xFF9F7FFF),
         body: Center(
             child: Column(children: [
           const SizedBox(
@@ -33,15 +33,18 @@ class _QuizscreenState extends State<Quizscreen3> {
           const SizedBox(
             height: 40,
           ),
-          const LinearProgressIndicator(
-            backgroundColor: Colors.orangeAccent,
-            value: 0.6,
+          const Padding(
+            padding: EdgeInsets.only(left: 15, right: 15),
+            child: LinearProgressIndicator(
+              backgroundColor: Colors.orangeAccent,
+              value: 0.6,
+            ),
           ),
 
           const SizedBox(
             height: 40,
           ),
-            const ScreensContainer(
+          const ScreensContainer(
             text:
                 'When Gmail first launched, how much storage did it provide for your email ?',
           ),
@@ -52,7 +55,7 @@ class _QuizscreenState extends State<Quizscreen3> {
             answers: const ['512', '1GB', '5GB', 'Unlimited'],
             onPress: () {
               Navigator.of(context).pushNamed(Routes.finalScreen);
-            } ,
+            },
           )
         ])));
   }

@@ -14,7 +14,7 @@ class ButtonList extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orangeAccent,
-                    minimumSize: const Size(325, 64),
+                    minimumSize: const Size(330, 64),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     )),

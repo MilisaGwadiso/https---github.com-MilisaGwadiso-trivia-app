@@ -17,10 +17,10 @@ class _QuizScreen2State extends State<QuizScreen2> {
         backgroundColor: Colors.deepPurpleAccent,
         body: Center(
             child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Center(
+          const Center(
             child: Text(
               'Question 6',
               textAlign: TextAlign.center,
@@ -31,24 +31,24 @@ class _QuizScreen2State extends State<QuizScreen2> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 60,
           ),
-          LinearProgressIndicator(backgroundColor: Colors.orangeAccent,
+          const LinearProgressIndicator(backgroundColor: Colors.orangeAccent,
               value: 0.7,
             ),
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
-          ScreensContainer(
+          const ScreensContainer(
             text:
                 'When Gmail first launched, how much storage did it provide for your email ?',
           ),
-          SizedBox(
+          const SizedBox(
             height: 45,
           ), // kjbijbih
           ButtonList(
-            answers: ['512', '1GB', '5GB', 'Unlimited'],
+            answers: const ['512', '1GB', '5GB', 'Unlimited'],
             onPress: () {
               Navigator.of(context).pushNamed(Routes.quizScreen3);
             } ,

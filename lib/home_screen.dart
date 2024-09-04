@@ -8,7 +8,7 @@ import 'package:trivia_app/Widgets/container.dart';
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-       backgroundColor: Colors.deepPurpleAccent,
+       backgroundColor: Color(0xFF9F7FFF),
       body: Column(
         children: [
           SizedBox(height:80),

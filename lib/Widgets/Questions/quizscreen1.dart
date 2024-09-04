@@ -14,7 +14,7 @@ class _QuizscreenState extends State<Quizscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurpleAccent,
+      backgroundColor: const Color(0xFF9F7FFF),
       body: Center(
         child: Column(
           children: [
@@ -33,9 +33,12 @@ class _QuizscreenState extends State<Quizscreen> {
             const SizedBox(
               height: 40,
             ),
-            const LinearProgressIndicator(
-              backgroundColor: Colors.orangeAccent,
-              value: 0.6,
+            const Padding(
+            padding: EdgeInsets.only(left: 15, right: 15),
+              child: LinearProgressIndicator(
+                color: Colors.orangeAccent,
+                value: 0.6,
+              ),
             ),
 
             const SizedBox(

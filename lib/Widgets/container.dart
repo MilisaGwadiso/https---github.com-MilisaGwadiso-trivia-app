@@ -31,7 +31,7 @@ class ContainerWidget extends StatelessWidget {
               'Press play to start QUIZMASTER',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
+                color: Color(0xFF9F7FFF),
                 fontSize: 32,
               ),
               textAlign: TextAlign.center,
