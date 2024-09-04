@@ -15,7 +15,7 @@ final String text;
     return  Container( height: height,
     width: width, alignment: Alignment.center,
     margin:const EdgeInsets.only(top:18),
-     decoration:BoxDecoration(borderRadius: BorderRadius.circular(20), 
+     decoration:BoxDecoration(borderRadius: BorderRadius.circular(40), 
    color: Colors.white, ),
    child: Stack(clipBehavior : Clip.none,
     children: [ const Center(
