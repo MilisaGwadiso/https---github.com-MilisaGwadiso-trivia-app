@@ -23,7 +23,7 @@ class _QuizscreenState extends State<Quizscreen3> {
           ),
           Center(
             child: Text(
-              'Question 6',
+              'Question 3',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                   color: Colors.white,
@@ -38,7 +38,7 @@ class _QuizscreenState extends State<Quizscreen3> {
             padding: EdgeInsets.only(left: 20, right: 20),
             child: LinearProgressIndicator(
               color: Color(0xffFF9051),
-              value: 0.6,
+              value: 0.9,
             ),
           ),
 
@@ -46,18 +46,17 @@ class _QuizscreenState extends State<Quizscreen3> {
             height: 40,
           ),
           const ScreensContainer(
-            text:
-                'When Gmail first launched, how much storage did it provide for your email ?',
+            text: 'What is the name of the South African national bird?',
           ),
           const SizedBox(
             height: 45,
           ), // kjbijbih
           ButtonList(
-            answers: const ['512MB', '1GB', '5GB', 'Unlimited'],
-            onPress: () {
-              Navigator.of(context).pushNamed(Routes.finalScreen);
-            }, colour: const Color(0xffAA8DFF),
-          )
+              answers: const ['Dove', 'Ostrich', 'Blue Crane', 'Cape Vulture'],
+              onPress: () {
+                Navigator.of(context).pushNamed(Routes.finalScreen);
+              },
+              colour: const Color(0xffFF9051)),
         ])));
   }
 }

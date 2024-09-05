@@ -23,7 +23,7 @@ class _QuizScreen2State extends State<QuizScreen2> {
           ),
           Center(
             child: Text(
-              'Question 6',
+              'Question 2',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 color: Colors.white,
@@ -33,31 +33,31 @@ class _QuizScreen2State extends State<QuizScreen2> {
             ),
           ),
           const SizedBox(
-            height: 60,
+            height: 40,
           ),
           const Padding(
             padding: EdgeInsets.only(left: 24, right: 24),
             child: LinearProgressIndicator(
               color: Color(0xffFF9051),
-              value: 0.7,
+              value: 0.6,
             ),
           ),
           const SizedBox(
             height: 60,
           ),
           const ScreensContainer(
-            text:
-                'When Gmail first launched, how much storage did it provide for your email ?',
+            text: 'How many eyes does a spider have?',
           ),
           const SizedBox(
             height: 45,
           ), // kjbijbih
           ButtonList(
-            answers: const ['512MB', '1GB', '5GB', 'Unlimited'],
+            answers: const ['8', '6', '2', '11'],
             onPress: () {
               Navigator.of(context).pushNamed(Routes.quizScreen3);
-            }, colour: const Color(0xffAA8DFF),
-          )
+            },
+            colour: const Color(0xffFF9051)),
+        
         ])));
   }
 }
