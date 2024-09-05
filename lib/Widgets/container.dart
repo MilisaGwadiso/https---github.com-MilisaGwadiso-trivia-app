@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_app/routes/routes.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({
@@ -26,29 +27,27 @@ class ContainerWidget extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          const Center(
+          Center(
             child: Text(
               'Press play to start QUIZMASTER',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF9F7FFF),
-                fontSize: 32,
+              style: GoogleFonts.poppins( fontSize: 28 ,fontWeight: FontWeight.w700,
+                color: const Color(0xff280A82),
               ),
               textAlign: TextAlign.center,
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 90,
-            left: 35,
+            left: 33,
             child: Center(
                 child: Text('Answear questions correctly to earn points',
-                    style: TextStyle(color: Colors.grey, fontSize: 14))),
+                    style: GoogleFonts.poppins(color:  Colors.grey, fontSize: 13,fontWeight: FontWeight.w400,)),),
           ),
           Positioned(
             bottom: -35,
             left: 130,
             child: CircleAvatar(
-              backgroundColor: Colors.deepOrangeAccent,
+              backgroundColor: const Color(0xffFF9051),
               radius: 40,
               child: IconButton(
                 color: Colors.white,

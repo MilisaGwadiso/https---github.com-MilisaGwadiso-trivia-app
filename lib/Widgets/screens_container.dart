@@ -17,7 +17,7 @@ class ScreensContainer extends StatelessWidget {
         text, textAlign:TextAlign.center,
         style: const TextStyle(
           fontWeight: FontWeight.bold,
-          color: Colors.deepPurpleAccent,
+          color: Color(0xff280A82),
           fontSize: 32,
         ),
         

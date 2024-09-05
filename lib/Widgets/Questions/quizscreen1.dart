@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:trivia_app/Widgets/button_list.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
 import 'package:trivia_app/routes/routes.dart';
@@ -21,10 +22,10 @@ class _QuizscreenState extends State<Quizscreen> {
             const SizedBox(
               height: 30,
             ),
-            const Center(
+            Center(
               child: Text(
                 'Question 6',
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.w500),
@@ -34,9 +35,9 @@ class _QuizscreenState extends State<Quizscreen> {
               height: 40,
             ),
             const Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
+            padding: EdgeInsets.only(left: 20, right: 20),
               child: LinearProgressIndicator(
-                color: Colors.orangeAccent,
+                color: Color(0xffFF9051),
                 value: 0.6,
               ),
             ),
@@ -55,7 +56,7 @@ class _QuizscreenState extends State<Quizscreen> {
               answers: const ['512MB', '1GB', '5GB', 'Unlimited'],
               onPress: () {
                 Navigator.of(context).pushNamed(Routes.quizScreen2);
-              },
+              }, colour: const Color(0xffFF9051),
             )
           ],
         ),
