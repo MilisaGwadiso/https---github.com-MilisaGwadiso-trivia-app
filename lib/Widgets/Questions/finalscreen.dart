@@ -83,9 +83,5 @@ class _FinalscreenState extends State<Finalscreen> {
             ],
           ),
         ));
-   
   }
-
- 
-  }
-
+}
