@@ -15,6 +15,9 @@ class _QuizscreenState extends State<Quizscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF9F7FFF),
+      ),
       backgroundColor: const Color(0xFF9F7FFF),
       body: Center(
         child: Column(

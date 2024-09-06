@@ -16,35 +16,41 @@ class ContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      width: width,
-      alignment: Alignment.center,
-      margin: const EdgeInsets.only(top: 18),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(40),
-        color: Colors.white,
-      ),
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          Center(
-            child: Text(
-              'Press play to start QUIZMASTER',
-              style: GoogleFonts.poppins( fontSize: 28 ,fontWeight: FontWeight.w700,
-                color: const Color(0xff280A82),
+        height: height,
+        width: width,
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(top: 18),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white,
+        ),
+        child: Stack(clipBehavior: Clip.none, children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  'Press play to start QUIZMASTER',
+                  style: GoogleFonts.poppins(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xff280A82),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Positioned(
-            bottom: 90,
-            left: 33,
-            child: Center(
+              Center(
                 child: Text('Answear questions correctly to earn points',
-                    style: GoogleFonts.poppins(color:  Colors.grey, fontSize: 13,fontWeight: FontWeight.w400,)),),
+                    style: GoogleFonts.poppins(
+                      color: const Color(0xffA7A7A7),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                    )),
+              ),
+            ],
           ),
           Positioned(
-            bottom: -35,
+            bottom: -43,
             left: 130,
             child: CircleAvatar(
               backgroundColor: const Color(0xffFF9051),
@@ -59,8 +65,6 @@ class ContainerWidget extends StatelessWidget {
               ),
             ),
           )
-        ],
-      ),
-    );
+        ]));
   }
 }
