@@ -13,6 +13,19 @@ class Finalscreen extends StatefulWidget {
 }
 
 class _FinalscreenState extends State<Finalscreen> {
+ 
+ String? _selectedAnswer; 
+  final String _correctAnswer = '';
+
+  void _handleAnswerSelected(String answer) {
+    setState(() {
+      _selectedAnswer = answer;
+    });
+     Future.delayed(const Duration(seconds: 1), () {
+      Navigator.of(context).pushNamed(Routes.homePage);
+    });
+  }
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,9 +89,9 @@ class _FinalscreenState extends State<Finalscreen> {
               ),
               ButtonList(
                 answers: const ['Play Again'],
-                onPress: () {
-                  Navigator.of(context).pushNamed(Routes.homePage);
-                },
+                selectedAnswer: _selectedAnswer,
+              correctAnswer: _correctAnswer,
+              onAnswerSelected: _handleAnswerSelected,
                 colour: const Color(0xffFF9051),
               )
             ],

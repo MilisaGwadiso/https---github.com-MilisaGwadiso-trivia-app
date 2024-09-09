@@ -4,27 +4,27 @@ import 'package:trivia_app/Widgets/button_list.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
 import 'package:trivia_app/routes/routes.dart';
 
-class QuizScreen2 extends StatefulWidget {
-  const QuizScreen2({super.key});
+class Quizscreen7 extends StatefulWidget {
+  const Quizscreen7({super.key});
 
   @override
-  State<QuizScreen2> createState() => _QuizScreen2State();
+  State<Quizscreen7> createState() => _Quizscreen7State();
 }
 
-class _QuizScreen2State extends State<QuizScreen2> {
+class _Quizscreen7State extends State<Quizscreen7> {
+  
   String? _selectedAnswer;
-  final String _correctAnswer = '8';
+  final String _correctAnswer = '11 February 1990';
 
   void _handleAnswerSelected(String answer) {
     setState(() {
       _selectedAnswer = answer;
     });
-    ;
     Future.delayed(const Duration(seconds: 1), () {
-      Navigator.of(context).pushNamed(Routes.quizScreen3);
+      Navigator.of(context).pushNamed(Routes.quizScreen8);
     });
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,36 +36,41 @@ class _QuizScreen2State extends State<QuizScreen2> {
           ),
           Center(
             child: Text(
-              'Question 2',
+              'Question 7',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
             ),
           ),
           const SizedBox(
             height: 40,
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 24, right: 24),
+            padding: EdgeInsets.only(left: 20, right: 20),
             child: LinearProgressIndicator(
               color: Color(0xffFF9051),
-              value: 0.2,
+              value: 0.7,
             ),
           ),
+
           const SizedBox(
-            height: 60,
+            height: 40,
           ),
           const ScreensContainer(
-            text: 'How many eyes does a spider have?',
+            text: 'When was Nelson Mandela set free?',
           ),
           const SizedBox(
             height: 45,
           ), // kjbijbih
           ButtonList(
-              answers: const ['8', '6', '2', '11'],
+              answers: const [
+                '11 February 1990',
+                '16 June 1994',
+                '8 August 1994',
+                '5 December 1991'
+              ],
               selectedAnswer: _selectedAnswer,
               correctAnswer: _correctAnswer,
               onAnswerSelected: _handleAnswerSelected,

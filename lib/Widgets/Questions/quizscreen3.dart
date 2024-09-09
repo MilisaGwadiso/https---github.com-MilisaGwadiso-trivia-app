@@ -8,10 +8,22 @@ class Quizscreen3 extends StatefulWidget {
   const Quizscreen3({super.key});
 
   @override
-  State<Quizscreen3> createState() => _QuizscreenState();
+  State<Quizscreen3> createState() => _Quizscreen3State();
 }
 
-class _QuizscreenState extends State<Quizscreen3> {
+class _Quizscreen3State extends State<Quizscreen3> {
+  String? _selectedAnswer; 
+  final String _correctAnswer = 'Blue Crane';
+
+  void _handleAnswerSelected(String answer) {
+    setState(() {
+      _selectedAnswer = answer;
+    });
+    Future.delayed(const Duration(seconds: 1), () {
+      Navigator.of(context).pushNamed(Routes.quizScreen4);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +50,7 @@ class _QuizscreenState extends State<Quizscreen3> {
             padding: EdgeInsets.only(left: 20, right: 20),
             child: LinearProgressIndicator(
               color: Color(0xffFF9051),
-              value: 0.9,
+              value: 0.3,
             ),
           ),
 
@@ -53,9 +65,9 @@ class _QuizscreenState extends State<Quizscreen3> {
           ), // kjbijbih
           ButtonList(
               answers: const ['Dove', 'Ostrich', 'Blue Crane', 'Cape Vulture'],
-              onPress: () {
-                Navigator.of(context).pushNamed(Routes.finalScreen);
-              },
+              selectedAnswer: _selectedAnswer,
+              correctAnswer: _correctAnswer,
+              onAnswerSelected: _handleAnswerSelected,
               colour: const Color(0xffFF9051)),
         ])));
   }

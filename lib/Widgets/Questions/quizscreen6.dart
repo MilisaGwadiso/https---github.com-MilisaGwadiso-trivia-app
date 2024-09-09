@@ -4,27 +4,27 @@ import 'package:trivia_app/Widgets/button_list.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
 import 'package:trivia_app/routes/routes.dart';
 
-class QuizScreen2 extends StatefulWidget {
-  const QuizScreen2({super.key});
+class Quizscreen6 extends StatefulWidget {
+  const Quizscreen6({super.key});
 
   @override
-  State<QuizScreen2> createState() => _QuizScreen2State();
+  State<Quizscreen6> createState() => _Quizscreen6State();
 }
 
-class _QuizScreen2State extends State<QuizScreen2> {
-  String? _selectedAnswer;
-  final String _correctAnswer = '8';
+class _Quizscreen6State extends State<Quizscreen6> {
+ 
+ String? _selectedAnswer;
+  final String _correctAnswer = '5';
 
   void _handleAnswerSelected(String answer) {
     setState(() {
       _selectedAnswer = answer;
     });
-    ;
     Future.delayed(const Duration(seconds: 1), () {
-      Navigator.of(context).pushNamed(Routes.quizScreen3);
+      Navigator.of(context).pushNamed(Routes.quizScreen7);
     });
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,37 +36,37 @@ class _QuizScreen2State extends State<QuizScreen2> {
           ),
           Center(
             child: Text(
-              'Question 2',
+              'Question 6',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
             ),
           ),
           const SizedBox(
             height: 40,
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 24, right: 24),
+            padding: EdgeInsets.only(left: 20, right: 20),
             child: LinearProgressIndicator(
               color: Color(0xffFF9051),
-              value: 0.2,
+              value: 0.6,
             ),
           ),
+
           const SizedBox(
-            height: 60,
+            height: 40,
           ),
           const ScreensContainer(
-            text: 'How many eyes does a spider have?',
+            text: 'How many languages are represented in the South African national anthem?',
           ),
           const SizedBox(
             height: 45,
           ), // kjbijbih
           ButtonList(
-              answers: const ['8', '6', '2', '11'],
-              selectedAnswer: _selectedAnswer,
+              answers: const ['3', '5', '11', '7'],
+               selectedAnswer: _selectedAnswer,
               correctAnswer: _correctAnswer,
               onAnswerSelected: _handleAnswerSelected,
               colour: const Color(0xffFF9051)),

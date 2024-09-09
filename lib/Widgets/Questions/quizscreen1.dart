@@ -12,13 +12,25 @@ class Quizscreen extends StatefulWidget {
 }
 
 class _QuizscreenState extends State<Quizscreen> {
+  String? _selectedAnswer; 
+  final String _correctAnswer = '1GB';
+
+  void _handleAnswerSelected(String answer) {
+    setState(() {
+      _selectedAnswer = answer;
+    });
+    Future.delayed(const Duration(seconds: 1), () {
+      Navigator.of(context).pushNamed(Routes.quizScreen2);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      
         backgroundColor: const Color(0xFF9F7FFF),
-      ),
-      backgroundColor: const Color(0xFF9F7FFF),
+
+
       body: Center(
         child: Column(
           children: [
@@ -41,7 +53,7 @@ class _QuizscreenState extends State<Quizscreen> {
               padding: EdgeInsets.only(left: 20, right: 20),
               child: LinearProgressIndicator(
                 color: Color(0xffFF9051),
-                value: 0.4,
+                value: 0.1,
               ),
             ),
 
@@ -57,11 +69,11 @@ class _QuizscreenState extends State<Quizscreen> {
             ), // kjbijbih
             ButtonList(
               answers: const ['512MB', '1GB', '5GB', 'Unlimited'],
-              onPress: () {
-                Navigator.of(context).pushNamed(Routes.quizScreen2);
-              },
+              selectedAnswer: _selectedAnswer,
+              correctAnswer: _correctAnswer,
+              onAnswerSelected: _handleAnswerSelected,
               colour: const Color(0xffFF9051),
-            )
+            ),
           ],
         ),
       ),

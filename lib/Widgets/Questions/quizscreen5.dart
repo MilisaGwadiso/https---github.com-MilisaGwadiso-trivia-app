@@ -3,28 +3,27 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:trivia_app/Widgets/button_list.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
 import 'package:trivia_app/routes/routes.dart';
-
-class QuizScreen2 extends StatefulWidget {
-  const QuizScreen2({super.key});
+class Quizscreen5 extends StatefulWidget {
+  const Quizscreen5({super.key});
 
   @override
-  State<QuizScreen2> createState() => _QuizScreen2State();
+  State<Quizscreen5> createState() => _Quizscreen5State();
 }
 
-class _QuizScreen2State extends State<QuizScreen2> {
-  String? _selectedAnswer;
-  final String _correctAnswer = '8';
+class _Quizscreen5State extends State<Quizscreen5> {
+ 
+ String? _selectedAnswer; // Track selected answer
+  final String _correctAnswer = '300km';
 
   void _handleAnswerSelected(String answer) {
     setState(() {
       _selectedAnswer = answer;
     });
-    ;
     Future.delayed(const Duration(seconds: 1), () {
-      Navigator.of(context).pushNamed(Routes.quizScreen3);
+      Navigator.of(context).pushNamed(Routes.quizScreen6);
     });
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,36 +35,36 @@ class _QuizScreen2State extends State<QuizScreen2> {
           ),
           Center(
             child: Text(
-              'Question 2',
+              'Question 5',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
             ),
           ),
           const SizedBox(
             height: 40,
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 24, right: 24),
+            padding: EdgeInsets.only(left: 20, right: 20),
             child: LinearProgressIndicator(
               color: Color(0xffFF9051),
-              value: 0.2,
+              value: 0.5,
             ),
           ),
+
           const SizedBox(
-            height: 60,
+            height: 40,
           ),
           const ScreensContainer(
-            text: 'How many eyes does a spider have?',
+            text: 'How long is the iconic Garden Route??',
           ),
           const SizedBox(
             height: 45,
           ), // kjbijbih
           ButtonList(
-              answers: const ['8', '6', '2', '11'],
+              answers: const ['500Km', '150km', '300km', '620km'],
               selectedAnswer: _selectedAnswer,
               correctAnswer: _correctAnswer,
               onAnswerSelected: _handleAnswerSelected,
