@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/routes/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trivia_app/Widgets/routes.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({
@@ -59,7 +59,7 @@ class ContainerWidget extends StatelessWidget {
                 color: Colors.white,
                 icon: const Icon(Icons.play_arrow_outlined),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.quizScreen1);
+                  Navigator.of(context).pushNamed(Routes.quizPage);
                 },
                 iconSize: 60,
               ),
