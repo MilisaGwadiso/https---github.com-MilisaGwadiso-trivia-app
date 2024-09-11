@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ScreensContainer extends StatelessWidget {
   const ScreensContainer({required this.text, super.key});
@@ -15,10 +16,10 @@ class ScreensContainer extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Text(
         text, textAlign:TextAlign.center,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Color(0xff280A82),
-          fontSize: 32,
+        style: GoogleFonts.poppins(
+          fontWeight: FontWeight.w700,
+          color: const Color(0xff280A82),
+          fontSize: 28,
         ),
         
       ),
