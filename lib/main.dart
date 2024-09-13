@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/routes/routes.dart';
+import 'package:trivia_app/Widgets/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +11,9 @@ void main() {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      initialRoute: Routes.homePage,
-      onGenerateRoute: Routes.routeGenerator,
+    initialRoute: Routes.homePage,
+    onGenerateRoute: Routes.routeGenerator, 
+    
       );
   }
 }

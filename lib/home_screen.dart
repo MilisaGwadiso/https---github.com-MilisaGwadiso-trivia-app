@@ -8,10 +8,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xff9F7FFF), Color(0xff8055FE)])),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xff9F7FFF), Color(0xff8055FE)],
+        ),
+      ),
       child: const Scaffold(
           backgroundColor: Color(0xFF9F7FFF),
           body: Column(children: [
