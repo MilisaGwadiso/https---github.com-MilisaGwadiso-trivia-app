@@ -21,6 +21,12 @@ class ContainerWidget extends StatelessWidget {
         alignment: Alignment.center,
         margin: const EdgeInsets.only(top: 18),
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                offset: const Offset(0, 16),
+                blurRadius: 32,
+                color: const Color(0xff3610A6).withOpacity(0.4))
+          ],
           borderRadius: BorderRadius.circular(40),
           color: Colors.white,
         ),
@@ -40,12 +46,14 @@ class ContainerWidget extends StatelessWidget {
                 ),
               ),
               Center(
-                child: Text('Answear questions correctly to earn points',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xffA7A7A7),
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400,
-                    )),
+                child: Text(
+                  'Answear questions correctly to earn points',
+                  style: GoogleFonts.poppins(
+                    color: const Color(0xffA7A7A7),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ), textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),

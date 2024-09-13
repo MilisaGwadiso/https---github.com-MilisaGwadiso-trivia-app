@@ -5,9 +5,8 @@ import 'package:trivia_app/Widgets/question_model.dart';
 import 'package:trivia_app/Widgets/routes.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
 
-// ignore: must_be_immutable
 class QuizScreen extends StatefulWidget {
-  QuizScreen({super.key});
+  const QuizScreen({super.key});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -28,7 +27,7 @@ class _QuizScreenState extends State<QuizScreen> {
     Future.delayed(const Duration(seconds: 1), () {
       if (answer == currentQuestion.correctAnswer) {
         setState(() {
-          totalScore++;
+          totalScore ++;
         });
       }
 
@@ -47,40 +46,47 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF9F7FFF),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 30),
-            Center(
-              child: Text(
-                'Question ${currentQuestionIndex + 1}',
-                style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
+      body: Container( decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xff9F7FFF), Color(0xff8055FE)],
+        ),
+      ),
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(height: 30),
+              Center(
+                child: Text(
+                  'Question ${currentQuestionIndex + 1}',
+                  style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: LinearProgressIndicator(
-                color: const Color(0xffFF9051),
-                value: (currentQuestionIndex + 1) / questions.length,
+              const SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: LinearProgressIndicator(
+                  color: const Color(0xffFF9051),
+                  value: (currentQuestionIndex + 1) / questions.length,
+                ),
               ),
-            ),
-            const SizedBox(height: 40),
-            ScreensContainer(text: currentQuestion.questionText),
-            const SizedBox(height: 45),
-            ButtonList(
-              answers: currentQuestion.answers,
-              selectedAnswer: selectedAnswer,
-              correctAnswer: currentQuestion.correctAnswer,
-              onAnswerSelected: _handleAnswerSelected,
-              colour: const Color(0xffFF9051),
-            ),
-          ],
+              const SizedBox(height: 40),
+              ScreensContainer(text: currentQuestion.questionText),
+              const SizedBox(height: 45),
+              ButtonList(
+                answers: currentQuestion.answers,
+                selectedAnswer: selectedAnswer,
+                correctAnswer: currentQuestion.correctAnswer,
+                onAnswerSelected: _handleAnswerSelected,
+                colour: const Color(0xffFF9051),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,30 +1,38 @@
 import 'package:flutter/material.dart';
 
 class StarRating extends StatelessWidget {
-  const StarRating({super.key});
-
+  const StarRating({ required this.starScore, super.key});
+final int starScore ;
   @override
   Widget build(BuildContext context) {
-    return const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+  int stars;
+  if (starScore >=8){
+    stars = 3;
+  } else if(starScore >=5){
+    stars =2;
+  } else if (starScore <=4){
+    stars =1;
+  } else {stars = 0;}
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       Icon(
         Icons.star_rounded,
-        color: Color(0xffFFE55A),
+        color: stars>=1 ? const Color(0xffFFE55A) : const Color(0xff7646FE),
         size: 50,
       ),
-      SizedBox(
+      const SizedBox(
         width: 4,
       ),
       Icon(
         Icons.star_rounded,
-        color: Color(0xffFFE55A),
+        color: stars>=2 ? const Color(0xffFFE55A): const Color(0xff7646FE),
         size: 80,
       ),
-      SizedBox(
+      const SizedBox(
         width: 4,
       ),
       Icon(
         Icons.star_rounded,
-        color: Color(0xff7646FE),
+        color: stars ==3 ? const Color(0xffFFE55A): const Color(0xff7646FE),
         size: 50,
       )
     ]);
