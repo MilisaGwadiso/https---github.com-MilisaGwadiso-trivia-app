@@ -24,7 +24,7 @@ class _QuizscreenState extends State<Quizscreen> {
             ),
             Center(
               child: Text(
-                'Question 6',
+                'Question 1',
                 style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: 20,
@@ -35,10 +35,10 @@ class _QuizscreenState extends State<Quizscreen> {
               height: 40,
             ),
             const Padding(
-            padding: EdgeInsets.only(left: 20, right: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: LinearProgressIndicator(
                 color: Color(0xffFF9051),
-                value: 0.6,
+                value: 0.4,
               ),
             ),
 
@@ -56,7 +56,8 @@ class _QuizscreenState extends State<Quizscreen> {
               answers: const ['512MB', '1GB', '5GB', 'Unlimited'],
               onPress: () {
                 Navigator.of(context).pushNamed(Routes.quizScreen2);
-              }, colour: const Color(0xffFF9051),
+              },
+              colour: const Color(0xffFF9051),
             )
           ],
         ),
