@@ -52,6 +52,7 @@ class _FinalscreenState extends State<Finalscreen> {
                   itemCount: 3,
                   initialRating: 2,
                   itemPadding: const EdgeInsets.symmetric(horizontal: 4),
+                  itemSize: 40,
                   itemBuilder: (context, _) => const Icon(
                         Icons.star,
                         color: Color(0xffFFE55A),
@@ -63,7 +64,7 @@ class _FinalscreenState extends State<Finalscreen> {
                 height: 150,
               ),
               Text(
-                'You Earned 80 pts',
+                'You Earned 40 pts',
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w400,
                   fontSize: 24,

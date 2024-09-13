@@ -22,6 +22,7 @@ class ButtonList extends StatelessWidget {
                   backgroundColor: colour,
                   minimumSize: const Size(330, 64),
                   shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: Colors.white, ),
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
