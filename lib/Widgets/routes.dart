@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_app/Widgets/final_screen.dart';
+import 'package:trivia_app/Widgets/question_model.dart';
 import 'package:trivia_app/Widgets/quizscreen.dart';
 import 'package:trivia_app/home_screen.dart';
 
@@ -14,9 +15,10 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
-      case quizPage:
+      case quizPage: 
+      final args = settings.arguments as List<Question>;
         return MaterialPageRoute(
-          builder: (context) => const QuizScreen(),
+          builder: (context) => QuizScreen(apiQuestions :args,),
         );
       case finalPage:
         final args = settings.arguments as Map<String, int>;

@@ -10,7 +10,7 @@ final int starScore ;
     stars = 3;
   } else if(starScore >=5){
     stars =2;
-  } else if (starScore <=4){
+  } else if (starScore >=3){
     stars =1;
   } else {stars = 0;}
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [

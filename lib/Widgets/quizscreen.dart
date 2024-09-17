@@ -1,24 +1,34 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trivia_app/Widgets/button_list.dart';
 import 'package:trivia_app/Widgets/question_model.dart';
 import 'package:trivia_app/Widgets/routes.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
+import 'package:trivia_app/api.dart';
 
-class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+class QuizScreen extends StatefulWidget {final List<Question> apiQuestions;
+
+  const QuizScreen({ required this.apiQuestions, super.key});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
-}
 
+}
 class _QuizScreenState extends State<QuizScreen> {
   int totalScore = 0;
   int currentQuestionIndex = 0;
   String? selectedAnswer;
+  List<Question> apiQuestions = [];
 
-  Question get currentQuestion => questions[currentQuestionIndex];
-
+Future<void> fetchQuestions() async {
+    final response = await Api.fetchQuestions();
+    setState(() {
+      apiQuestions = response;}); }
+    
+  Question get currentQuestion => widget.apiQuestions[currentQuestionIndex];
+ 
+ 
   void _handleAnswerSelected(String answer) {
     setState(() {
       selectedAnswer = answer;
@@ -29,9 +39,10 @@ class _QuizScreenState extends State<QuizScreen> {
         setState(() {
           totalScore ++;
         });
+        
       }
 
-      if (currentQuestionIndex < questions.length - 1) {
+      if (currentQuestionIndex < widget.apiQuestions.length - 1) {
         setState(() {
           currentQuestionIndex++;
           selectedAnswer = null;
@@ -42,11 +53,15 @@ class _QuizScreenState extends State<QuizScreen> {
       }
     });
   }
+@override
+  initState() {
+  super.initState();
+  fetchQuestions();}
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container( decoration: const BoxDecoration(
+return Scaffold(
+      body:Container( decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
@@ -70,9 +85,9 @@ class _QuizScreenState extends State<QuizScreen> {
               const SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: LinearProgressIndicator(
+                child: LinearProgressIndicator(minHeight: 6,
                   color: const Color(0xffFF9051),
-                  value: (currentQuestionIndex + 1) / questions.length,
+                  value: (currentQuestionIndex + 1) / widget.apiQuestions.length,
                 ),
               ),
               const SizedBox(height: 40),
