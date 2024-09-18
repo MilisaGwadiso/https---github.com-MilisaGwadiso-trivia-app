@@ -10,11 +10,15 @@ class Api {
     final response = await http.get(uri);
     final body = response.body;
     final json = jsonDecode(body);
-    final results = json['results'] as List<dynamic>;
+    final List<dynamic> results = json['results']; //as List<dynamic>;
 
-    final apiQuestions = results.map((json) {
-      return Question.fromMap(json);
-    }).toList();
+    var questions = results.map(parseToQuestion);
+    final List<Question> apiQuestions = questions.toList();
+
     return apiQuestions;
+  }
+
+  static Question parseToQuestion(dynamic json) {
+    return Question.fromMap(json);
   }
 }

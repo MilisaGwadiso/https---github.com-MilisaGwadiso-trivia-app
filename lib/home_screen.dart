@@ -54,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
                 icon: const Icon(Icons.play_arrow_outlined),
                 onPressed: () async {
+                  print('Pressed');
                   await fetchQuestions();
                   Navigator.of(context)
                       .pushNamed(Routes.quizPage, arguments: apiQuestions);
