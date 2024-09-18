@@ -7,8 +7,8 @@ class ScreensContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 260,
-      width: 330, 
+      height: 280,
+      width: 350, 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
         color: Colors.white,
