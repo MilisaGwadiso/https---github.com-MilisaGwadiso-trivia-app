@@ -27,7 +27,7 @@ class ButtonList extends StatelessWidget {
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor:
-                  isSelected ? (isCorrect ? Colors.green : Colors.red) : (selectedAnswer != null ? const Color(0xffAA8DFF) :colour),
+                  isSelected ? (isCorrect ? const Color(0xff09CACA) : Colors.red) : (selectedAnswer != null ? const Color(0xffAA8DFF) :colour),
               minimumSize: const Size(330, 64),
               shape: RoundedRectangleBorder(
                 side: const BorderSide(
