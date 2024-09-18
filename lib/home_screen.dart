@@ -14,12 +14,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Question> apiQuestions = [];
   Future<void> fetchQuestions() async {
+    setState(() {
+      isLoading = true;
+    });
+    
     final response = await Api.fetchQuestions();
     setState(() {
       apiQuestions = response;
+      isLoading = false;
     });
   }
-
+var isLoading = false;
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,10 +56,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: CircleAvatar(
               backgroundColor: const Color(0xffFF9051),
               radius: 40,
-              child: IconButton(
+              child: isLoading
+                        ? const CircularProgressIndicator(color: Colors.white,
+                          )
+              : IconButton(
                 color: Colors.white,
                 icon: const Icon(Icons.play_arrow_outlined),
-                onPressed: () async {
+                onPressed: ( ) async {
                   print('Pressed');
                   await fetchQuestions();
                   Navigator.of(context)
