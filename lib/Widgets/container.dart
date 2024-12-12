@@ -1,6 +1,6 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:trivia_app/Widgets/routes.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({
@@ -12,9 +12,9 @@ class ContainerWidget extends StatelessWidget {
   final double height;
   final double width;
   final String text;
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
+  
     return Container(
         height: height,
         width: width,
@@ -30,7 +30,7 @@ class ContainerWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
           color: Colors.white,
         ),
-        child: Stack(clipBehavior: Clip.none, children: [
+        child: 
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -57,22 +57,7 @@ class ContainerWidget extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(
-            bottom: -43,
-            left: 130,
-            child: CircleAvatar(
-              backgroundColor: const Color(0xffFF9051),
-              radius: 40,
-              child: IconButton(
-                color: Colors.white,
-                icon: const Icon(Icons.play_arrow_outlined),
-                onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.quizPage);
-                },
-                iconSize: 60,
-              ),
-            ),
-          )
-        ]));
+    );
+         
   }
 }

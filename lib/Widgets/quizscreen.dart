@@ -6,7 +6,9 @@ import 'package:trivia_app/Widgets/routes.dart';
 import 'package:trivia_app/Widgets/screens_container.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  final List<Question> apiQuestions;
+
+  const QuizScreen({required this.apiQuestions, super.key});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -16,8 +18,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int totalScore = 0;
   int currentQuestionIndex = 0;
   String? selectedAnswer;
-
-  Question get currentQuestion => questions[currentQuestionIndex];
+  Question get currentQuestion => widget.apiQuestions[currentQuestionIndex];
 
   void _handleAnswerSelected(String answer) {
     setState(() {
@@ -27,11 +28,11 @@ class _QuizScreenState extends State<QuizScreen> {
     Future.delayed(const Duration(seconds: 1), () {
       if (answer == currentQuestion.correctAnswer) {
         setState(() {
-          totalScore ++;
+          totalScore++;
         });
       }
 
-      if (currentQuestionIndex < questions.length - 1) {
+      if (currentQuestionIndex < widget.apiQuestions.length - 1) {
         setState(() {
           currentQuestionIndex++;
           selectedAnswer = null;
@@ -44,19 +45,25 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   @override
+  initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container( decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xff9F7FFF), Color(0xff8055FE)],
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xff9F7FFF), Color(0xff8055FE)],
+          ),
         ),
-      ),
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 30),
+              const SizedBox(height: 45),
               Center(
                 child: Text(
                   'Question ${currentQuestionIndex + 1}',
@@ -67,12 +74,14 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: LinearProgressIndicator(
+                  minHeight: 6,
                   color: const Color(0xffFF9051),
-                  value: (currentQuestionIndex + 1) / questions.length,
+                  value:
+                      (currentQuestionIndex + 1) / widget.apiQuestions.length,
                 ),
               ),
               const SizedBox(height: 40),
